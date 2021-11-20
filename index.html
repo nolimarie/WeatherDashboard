@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <div class="container-fluid text-center p-3 mb-2 bg-primary text-white">        
+        <h1>Weather Dashboard</h1>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <h5 class="reqsearch">Search for a City:</h5>
+                <input id="citysearch" type="text" class="form-control" placeholder="Ex. Denver" aria-label="Ex.Denver">
+                <div class="input-group-append aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary bg-primary text-white" type="button" id="searchbtn">Search</button>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row me-0">
+            <div class="col-9">
+                <div id="currentweather" class="card col-9 m-3 d-none">
+                    <div class="card-body border border-primary rounded">
+                        <h3 id="cityname" class="cityname" text-center></h3>
+                        <img id="cond-pic"></p>
+                        <p id="temp">Temp:</p>
+                        <p id="humidity">Humidity:</p>
+                        <p id="wind">Wind:</p>
+                        <p id="uvindex">UV Index:</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="row d-none" id="fiveday">
+                <h4>5-Day Forecast:</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="future col-2 bg-secondary text-white m-2 rounded"></div>
+            <div class="future col-2 bg-secondary text-white m-2 rounded"></div>
+            <div class="future col-2 bg-secondary text-white m-2 rounded"></div>
+            <div class="future col-2 bg-secondary text-white m-2 rounded"></div>
+            <div class="future col-2 bg-secondary text-white m-2 rounded"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js"
+        integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript"  src="./assets/js/script.js" />
+</body>
+</html>
