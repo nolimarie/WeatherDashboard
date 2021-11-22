@@ -203,6 +203,7 @@ function getForecast(cityName, apiKey) {
         tempSpan[i].textContent = ourForecastObject[i].temp + " °F";
         humiditySpan[i].textContent = ourForecastObject[i].humidity + "%";
       }
+      
     })
     .catch(function (error) {
       console.log("There is an error: " + error);
