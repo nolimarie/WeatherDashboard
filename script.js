@@ -8,7 +8,7 @@ var weatherCont = document.querySelector("#weatherContent");
 var cardDivEl = document.querySelector(".card");
 var cardTitleEl = document.querySelector(".card-title");
 var weatherIconEl = document.querySelector("#icon");
-var uvIndexEl = document.querySelector("#uvIndex");
+var uvIndexEl = document.querySelector(".uvIndex");
 
 var openWeatherQueryUrl = "https://api.openweathermap.org/data/2.5/";
 var apiKey = "624559456ca6fb66f8b87b160aa040d5";
@@ -117,7 +117,7 @@ function getCurrentWeather(cityName, apiKey) {
     });
 }
 
-// Get the current UV index of the input city
+// Get the current UV index city user inputs
 function getUVIndex(lat, lon, apiKey) {
   uvIndexUrl = openWeatherQueryUrl + "uvi?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
   
@@ -143,7 +143,7 @@ function getUVIndex(lat, lon, apiKey) {
       } else if (uvIndex > 10) {
         colorClass = "violet";
       }
-      document.querySelector("#uvIndex").setAttribute("class", colorClass);
+      document.querySelector(".uvIndex").setAttribute("class", colorClass);
       uvIndexEl.textContent = uvIndex;
     })
     .catch(function (error) {
@@ -227,7 +227,7 @@ function displayCurrentWeather(resultObj) {
 
   var tempEl = document.querySelector(".temp");
   var humidityEl = document.querySelector(".humidity");
-  var windSpeedEl = document.querySelector("#wind");
+  var windSpeedEl = document.querySelector(".wind");
 
   // Adding temperature  
   if (resultObj.main.temp) {
