@@ -188,19 +188,19 @@ function getForecast(cityName, apiKey) {
 
       for (var i = 0; i < ourForecastObject.length; i++) {
         var dateTitle = document.querySelectorAll(".date-title");
-        var iconEl = document.querySelectorAll("#forecastIcon");
-        var tempSpan = document.querySelectorAll("#tempForecast");
-        var humiditySpan = document.querySelectorAll("#humidityForecast");
+        var iconEl = document.querySelectorAll(".forecastIcon");
+        var tempSpan = document.querySelectorAll(".tempForecast");
+        var humiditySpan = document.querySelectorAll(".humidityForecast");
 
         dateTitle[i].textContent = formatDate(ourForecastObject[i].date);
         iconEl[i].setAttribute(
           "src",
-          "https://openweathermap.org/img/wn/" +
+          "http://openweathermap.org/img/wn/" +
             ourForecastObject[i].icon +
             "@2x.png"
         );
         iconEl[i].setAttribute("alt", ourForecastObject[i].iconAlt);
-        tempSpan[i].textContent = ourForecastObject[i].temp + " °F";
+        tempSpan[i].textContent = ourForecastObject[i].temp + "°F";
         humiditySpan[i].textContent = ourForecastObject[i].humidity + "%";
       }
       
@@ -218,13 +218,15 @@ function displayCurrentWeather(resultObj) {
   // setting src and alt attribute of image
   weatherIconEl.setAttribute(
     "src",
-    "https://openweathermap.org/img/wn/" + resultObj.weather[0].icon + "@2x.png"
+    "https://openweathermap.org/img/wn/" + 
+    resultObj.weather[0].icon + 
+    "@2x.png"
   );
   weatherIconEl.setAttribute("alt", resultObj.weather[0].description);
   cardTitleEl.append(weatherIconEl);
 
-  var tempEl = document.querySelector("#temp");
-  var humidityEl = document.querySelector("#humidity");
+  var tempEl = document.querySelector(".temp");
+  var humidityEl = document.querySelector(".humidity");
   var windSpeedEl = document.querySelector("#wind");
 
   // Adding temperature  
